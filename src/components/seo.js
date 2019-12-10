@@ -73,9 +73,9 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ja`,
   meta: [],
-  description: ``,
+  description: `kiddikn portfolio`,
 }
 
 SEO.propTypes = {
