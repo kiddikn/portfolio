@@ -1,7 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+// import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+import '../assets/sass/main.scss';
 
 class Layout extends React.Component {
   render() {

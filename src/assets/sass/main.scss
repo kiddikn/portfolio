@@ -1,0 +1,93 @@
+
+
+// Breakpoints.
+
+	// @include breakpoints((
+	// 	xlarge:   ( 1281px,  1680px ),
+	// 	large:    ( 981px,   1280px ),
+	// 	medium:   ( 737px,   980px  ),
+	// 	small:    ( 481px,   736px  ),
+	// 	xsmall:   ( null,    480px  ),
+	// ));
+
+// Reset.
+
+	// html, body, div, span, applet, object,
+	// iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+	// pre, a, abbr, acronym, address, big, cite,
+	// code, del, dfn, em, img, ins, kbd, q, s, samp,
+	// small, strike, strong, sub, sup, tt, var, b,
+	// u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+	// form, label, legend, table, caption, tbody,
+	// tfoot, thead, tr, th, td, article, aside,
+	// canvas, details, embed, figure, figcaption,
+	// footer, header, hgroup, menu, nav, output, ruby,
+	// section, summary, time, mark, audio, video {
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	border: 0;
+	// 	font-size: 100%;
+	// 	font: inherit;
+	// 	vertical-align: baseline;
+	// }
+
+	.skillTag {
+		list-style: none;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+	
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%,-50%);
+						transform: translate(-50%,-50%);
+		li {
+			display: inline-block;
+		}
+		a {
+			line-height: 26px;
+			position: relative;
+			display: inline-block;
+			height: 26px;
+			margin: 0 0px 10px 10px;
+			padding: 0 20px 0 23px;
+			-webkit-transition: color 0.2s;
+					transition: color 0.2s;
+			text-decoration: none;
+			color: #ffffff;
+			border-radius: 0 3px 3px 0;
+			background: #0089e0;
+		}
+		a::before, a::after {
+			background: #fafcfc;/*背景色*/
+		}
+		a::before {
+			position: absolute;
+			top: 10px;
+			left: 3px;
+			width: 6px;
+			height: 6px;
+			content: '';
+			border-radius: 10px;
+		}
+		a::after {
+			position: absolute;
+			top: -1px;
+			left: -6px;
+			width: 0;
+			height: 0;
+			content: '';
+			border-style: solid;
+			border-width: 14px 8px 14px 0;
+			border-color: transparent #0089e0 transparent transparent;
+			border-radius: 4px;
+		}
+		a:hover {
+			background: #555555;
+		}
+		a:hover:after {
+			border-color: transparent #555555 transparent transparent;
+		}
+	}
+	

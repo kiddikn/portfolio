@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import SkillTag from "../components/skillTag"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
@@ -30,6 +31,8 @@ class BlogIndex extends React.Component {
         <section id="one">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
+            const skill = node.frontmatter.skills || []
+
             return (
               <article key={node.fields.slug}>
                 <header>
@@ -44,6 +47,7 @@ class BlogIndex extends React.Component {
                   </h3>
                   <small>{node.frontmatter.date}</small>
                 </header>
+                <SkillTag skills={skill} />
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
@@ -63,27 +67,28 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title,
-        subTitle
-      }
+{
+  site {
+    siteMetadata {
+      title
+      subTitle
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {fields: {slug: {regex: "^/products/"}}}) {
+    edges {
+      node {
+        fields {
+          slug
         }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          skills
+        }
+        excerpt
       }
     }
   }
+}
 `

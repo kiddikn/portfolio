@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `kiddikn portfolio`,
     subTitle: 'IT × LIFESAVING × 楽笑',
-    author: `Juo Akata`,
+    author: `kiddikn(Juo Akata)`,
     description: `kiddikn portfolio`,
     siteUrl: `https://kiddikn.github.io/portfolio/`,
     social: {
@@ -76,5 +76,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-sass`,
   ],
 }
