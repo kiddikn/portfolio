@@ -6,10 +6,30 @@ import { rhythm } from "../utils/typography"
 import '../assets/sass/main.scss';
 
 class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isPreloaded: true,
+    };
+  }
+
+  componentDidMount() {
+    this.timeoutId = setTimeout(() => {
+      this.setState({ isPreloaded: false });
+    }, 100);
+  }
+
+  componentWillUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+  }
+
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { location, title, children } = this.props;
+    const { isPreloaded } = this.state;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     if (location.pathname !== rootPath) {
       header = (
@@ -33,19 +53,20 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
+      <div 
+        className={
+          isPreloaded
+            ? 'landing main-body is-preload'
+            : 'landing main-body'
+        }
       >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          &copy; 2019- kiddikn
-        </footer>
+        <div id="page-wrapper">
+          <header>{header}</header>
+          <main>{children}</main>
+          <footer>
+            &copy; 2019- kiddikn
+          </footer>
+        </div>
       </div>
     )
   }
