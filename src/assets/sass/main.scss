@@ -1000,7 +1000,7 @@
 				$j: 0.035 * $i;
 
 				&:nth-child(#{$i}) {
-					background-color: rgba(0,0,0, $j);
+					background-color: rgba(150,0,0, $j);
 				}
 			}
 
@@ -1343,7 +1343,7 @@
 		}
 
 		&.style2 {
-			background-color: _palette(bg);
+			background-color: _palette(bg-theme);
 		}
 
 		&.style3 {

@@ -20,6 +20,13 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 skills
+                featuredImage {
+                  childImageSharp {
+                    fluid(maxWidth: 800) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }

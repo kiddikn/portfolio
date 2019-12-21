@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import Img from "gatsby-image"
 import SkillTag from "../components/skillTag"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -28,36 +29,55 @@ class BlogIndex extends React.Component {
           </Scroll> */}
         </section>
 
-        <section id="one">
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            const skill = node.frontmatter.skills || []
+        <section id="one" className="wrapper style1 special">
+          <div className="inner">
+            <header className="major">
+              <h2>
+                明るく楽しく元気よく活動します！
+              </h2>
+              <p>
+                ライフセービング活動をしながらエンジニアをしています。
+                </p><p>
+                趣味で作成したサイトを記載します。
+              </p>
+            </header>
+          </div>
+        </section>
 
-            return (
-              <article key={node.fields.slug}>
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                </header>
-                <SkillTag skills={skill} />
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
+        <section id="two" className="wrapper alt style2">
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              const skill = node.frontmatter.skills || []
+              const img = node.frontmatter.featuredImage.childImageSharp.fluid
+
+              return (
+                <section className="spotlight">
+                  <div key={node.fields.slug} className="content">
+                    <h2
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    >
+                      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                        {title}
+                      </Link>
+                    </h2>
+                    <SkillTag skills={skill} />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.description || node.excerpt,
+                      }}
+                    />
+                  </div>
+                  <div className="image">
+                    <Img
+                      fluid={img}
+                      alt={title}
+                    />
+                  </div>
                 </section>
-              </article>
-            )
-          })}
+              )
+            })}
         </section>
       </Layout>
     )
@@ -85,10 +105,18 @@ export const pageQuery = graphql`
           title
           description
           skills
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         excerpt
       }
     }
   }
+  
 }
 `

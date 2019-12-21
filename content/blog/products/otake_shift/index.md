@@ -1,5 +1,6 @@
 ---
 title: シフト管理表
+featuredImage: album.png
 ---
 
 監視救助活動に特化したシフト表の作成。

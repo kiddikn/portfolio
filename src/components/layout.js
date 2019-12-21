@@ -63,8 +63,10 @@ class Layout extends React.Component {
         <div id="page-wrapper">
           <header>{header}</header>
           <main>{children}</main>
-          <footer>
-            &copy; 2019- kiddikn
+          <footer id="footer">
+            <ul className="copyright">
+              <li>&copy; 2019- kiddikn</li>
+            </ul>
           </footer>
         </div>
       </div>
