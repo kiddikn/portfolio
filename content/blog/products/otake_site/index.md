@@ -1,6 +1,6 @@
 ---
 title: HPの作成
 skills: ["PHP", "Wordpress", "HTML5", "css"]
-featuredImage: album.png
+featuredImage: site.png
 ---
-大竹HP
+[大竹サイト](https://otake-slsc.org/)

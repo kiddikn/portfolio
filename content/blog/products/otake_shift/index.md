@@ -1,6 +1,7 @@
 ---
 title: シフト管理表
-featuredImage: album.png
+skills: ["Django", "python3"]
+featuredImage: shift.png
 ---
 
 監視救助活動に特化したシフト表の作成。
