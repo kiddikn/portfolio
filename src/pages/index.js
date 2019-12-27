@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SkillTag from "../components/skillTag"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
@@ -37,7 +36,6 @@ class BlogIndex extends React.Component {
               </h2>
               <p>
                 ライフセービング活動をしながらエンジニアをしています。
-                </p><p>
                 趣味で作成したサイトを記載します。
               </p>
             </header>
@@ -53,11 +51,7 @@ class BlogIndex extends React.Component {
               return (
                 <section className="spotlight">
                   <div key={node.fields.slug} className="content">
-                    <h2
-                      style={{
-                        marginBottom: rhythm(1 / 4),
-                      }}
-                    >
+                    <h2>
                       <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                         {title}
                       </Link>

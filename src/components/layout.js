@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-// import { rhythm, scale } from "../utils/typography"
-import { rhythm } from "../utils/typography"
 import '../assets/sass/main.scss';
+
+import Footer from './footer';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -63,11 +63,7 @@ class Layout extends React.Component {
         <div id="page-wrapper">
           <header>{header}</header>
           <main>{children}</main>
-          <footer id="footer">
-            <ul className="copyright">
-              <li>&copy; 2019- kiddikn</li>
-            </ul>
-          </footer>
+          <Footer></Footer>
         </div>
       </div>
     )

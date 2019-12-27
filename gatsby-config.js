@@ -6,9 +6,26 @@ module.exports = {
     author: `kiddikn(Juo Akata)`,
     description: `kiddikn portfolio`,
     siteUrl: `https://kiddikn.github.io/portfolio/`,
-    social: {
-      twitter: `kiddikn`,
-    },
+    socialLinks: [
+      {
+        style: 'brands',
+        icon: 'fa-github',
+        name: 'Github',
+        url: 'https://github.com/kiddikn',
+      },
+      {
+        style: 'brands',
+        icon: 'fa-twitter',
+        name: 'Twitter',
+        url: 'https://twitter.com/kiddikn',
+      },
+      {
+        style: 'brands',
+        icon: 'fa-facebook',
+        name: 'Facebook',
+        url: 'https://www.facebook.com/juo.akata',
+      },
+    ],
   },
   plugins: [
     {
@@ -70,12 +87,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     `gatsby-plugin-sass`,
   ],
 }

@@ -1,6 +1,6 @@
 ---
 title: シフト管理表
-skills: ["Django", "python3"]
+skills: ["python3", "Django"]
 featuredImage: shift.png
 ---
 

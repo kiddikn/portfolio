@@ -7,7 +7,7 @@ class SkillTag extends React.Component {
     return (
       <ul className="skillTag">
       {skills.map(skill => (
-        <li className="skill">
+        <li className="skill" key={skill}>
         <a href="/">
         {skill}
         </a>
