@@ -56,12 +56,12 @@ class BlogIndex extends React.Component {
                         {title}
                       </Link>
                     </h2>
-                    <SkillTag skills={skill} />
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
+                        __html: node.html,
                       }}
                     />
+                    <SkillTag skills={skill} />
                   </div>
                   <div className="image">
                     <Img
@@ -97,7 +97,6 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
           skills
           featuredImage {
             childImageSharp {
@@ -107,7 +106,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        excerpt
+        html
       }
     }
   }

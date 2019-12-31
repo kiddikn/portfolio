@@ -8,9 +8,9 @@ class SkillTag extends React.Component {
       <ul className="skillTag">
       {skills.map(skill => (
         <li className="skill" key={skill}>
-        <a href="/">
-        {skill}
-        </a>
+        {/* <a href="/"> */}
+        <span>{skill}</span>
+        {/* </a> */}
         </li>
       ))}
       </ul>
