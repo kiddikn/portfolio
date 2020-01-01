@@ -52,9 +52,9 @@ class BlogIndex extends React.Component {
                 <section className="spotlight">
                   <div key={node.fields.slug} className="content">
                     <h2>
-                      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                      {/* <Link style={{ boxShadow: `none` }} to={node.fields.slug}> */}
                         {title}
-                      </Link>
+                      {/* </Link> */}
                     </h2>
                     <p
                       dangerouslySetInnerHTML={{
