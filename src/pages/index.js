@@ -49,14 +49,14 @@ class BlogIndex extends React.Component {
               const img = node.frontmatter.featuredImage.childImageSharp.fluid
 
               return (
-                <section className="spotlight">
-                  <div key={node.fields.slug} className="content">
+                <section className="spotlight" key={node.fields.slug}>
+                  <div className="content">
                     <h2>
                       {/* <Link style={{ boxShadow: `none` }} to={node.fields.slug}> */}
                         {title}
                       {/* </Link> */}
                     </h2>
-                    <p
+                    <div
                       dangerouslySetInnerHTML={{
                         __html: node.html,
                       }}
@@ -72,6 +72,38 @@ class BlogIndex extends React.Component {
                 </section>
               )
             })}
+        </section>
+
+        <section id="three" className="wrapper special style3 career">
+          <header className="major">
+            <h2>略歴</h2>
+          </header>
+          <div className="inner">
+            <ul className="features">
+              <li>
+                <h3>学歴</h3>
+                <p>筑波大学情報学群情報科学類(2011.04〜2015.03)</p>
+              </li>
+              <li>
+                <h3>職歴</h3>
+                <p>DIT EM(2015.04〜2019.06)</p>
+                <p>DIT eB(2019.07〜)</p>
+              </li>
+              <li>
+                <h3>技術</h3>
+                <ul>
+                  <li>C#</li>
+                  <li>VB.NET</li>
+                  <li>Java</li>
+                  <li>Django2</li>
+                  <li>CakePHP2</li>
+                  <li>HTML5/CSS</li>
+                  <li>JavaScript</li>
+                  <li>React.js(勉強中・本ポートフォリオ)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </section>
       </Layout>
     )
