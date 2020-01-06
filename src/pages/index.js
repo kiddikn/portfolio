@@ -91,16 +91,26 @@ class BlogIndex extends React.Component {
               </li>
               <li>
                 <h3>技術</h3>
-                <ul>
-                  <li>C#</li>
-                  <li>VB.NET</li>
-                  <li>Java</li>
-                  <li>Django2</li>
-                  <li>CakePHP2</li>
-                  <li>HTML5/CSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js(勉強中・本ポートフォリオ)</li>
-                </ul>
+                <p className="briefHistory">
+                  ・C#<br/>
+                  ・VB.NET<br/>
+                  ・Java<br/>
+                  ・Django2<br/>
+                  ・CakePHP2<br/>
+                  ・HTML/CSS<br/>
+                  ・JavaScript<br/>
+                  ・React.js(本サイトで勉強中)
+                </p>
+              </li>
+              <li>
+                <h3>資格</h3>
+                <p className="briefHistory">
+                  ・基本情報技術者<br/>
+                  ・応用情報技術者<br/>
+                  ・日商簿記検定2級<br/>
+                  ・中学教員免許(数学)<br/>
+                  ・高校教員免許(数学・情報)
+                </p>
               </li>
             </ul>
           </div>

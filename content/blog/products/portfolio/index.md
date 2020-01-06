@@ -1,7 +1,7 @@
 ---
 title: ポートフォリオ
 skills: ["React", "GatsbyJs", "HTML5", "Sass"]
-featuredImage: album.png
+featuredImage: portfolio.png
 ---
 
 React学習のため本ポートフォリオサイトを立ち上げました。  
