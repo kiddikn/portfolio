@@ -82,7 +82,7 @@ class BlogIndex extends React.Component {
             <ul className="features">
               <li>
                 <h3>学歴</h3>
-                <p>筑波大学情報学群情報科学類(2011.04〜2015.03)</p>
+                <p>筑波大学情報学群情報科学類<br/>(2011.04〜2015.03)</p>
               </li>
               <li>
                 <h3>職歴</h3>
@@ -99,7 +99,8 @@ class BlogIndex extends React.Component {
                   ・CakePHP2<br/>
                   ・HTML/CSS<br/>
                   ・JavaScript<br/>
-                  ・React.js(本サイトで勉強中)
+                  ・React.js(本サイトで勉強中)<br/>
+                  ・競プロ(<a href="https://atcoder.jp/users/kiddikn">Atcoder</a>)
                 </p>
               </li>
               <li>
