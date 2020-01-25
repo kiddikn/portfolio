@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Img from "gatsby-image"
@@ -11,6 +11,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const subTitle = data.site.siteMetadata.subTitle
+    const author = data.site.siteMetadata.author
     const posts = data.allMarkdownRemark.edges
 
     return (
@@ -20,6 +21,20 @@ class BlogIndex extends React.Component {
           <div className="inner">
             <h2>{siteTitle}</h2>
             <p>{subTitle}</p>
+            <Img
+              fixed={data.avatar.childImageSharp.fixed}
+              alt={author}
+              style={{
+                marginBottom: 0,
+                minWidth: 100,
+                minHeight: 100,
+                borderRadius: `100%`,
+              }}
+              imgStyle={{
+                borderRadius: `50%`,
+              }}
+            />
+            <p>{author}</p>
           </div>
           {/* <Scroll type="id" element="one">
             <a href="#one" className="more">
@@ -95,22 +110,22 @@ class BlogIndex extends React.Component {
                   ・C#<br/>
                   ・VB.NET<br/>
                   ・Java<br/>
-                  ・Django2<br/>
-                  ・CakePHP2<br/>
                   ・HTML/CSS<br/>
                   ・JavaScript<br/>
                   ・React.js(本サイトで勉強中)<br/>
+                  ・Django2<br/>
+                  ・CakePHP2<br/>
                   ・競プロ(<a href="https://atcoder.jp/users/kiddikn">Atcoder</a>)
                 </p>
               </li>
               <li>
                 <h3>資格</h3>
                 <p className="briefHistory">
+                  ・中学校教諭一種免許状(数学)<br/>
+                  ・高等学校教諭一種免許状(数学)<br/>
                   ・基本情報技術者<br/>
                   ・応用情報技術者<br/>
-                  ・日商簿記検定2級<br/>
-                  ・中学教員免許(数学)<br/>
-                  ・高校教員免許(数学・情報)
+                  ・日本商工会議所簿記検定試験2級<br/>
                 </p>
               </li>
             </ul>
@@ -129,6 +144,14 @@ export const pageQuery = graphql`
     siteMetadata {
       title
       subTitle
+      author
+    }
+  }
+  avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    childImageSharp {
+      fixed(width: 100, height: 100) {
+        ...GatsbyImageSharpFixed
+      }
     }
   }
   allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {fields: {slug: {regex: "^/products/"}}}) {

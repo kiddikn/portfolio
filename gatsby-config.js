@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `kiddikn portfolio`,
     subTitle: 'IT × LIFESAVING × 楽笑',
-    author: `kiddikn(Juo Akata)`,
+    author: `赤田樹皇 / Juo Akata`,
     description: `kiddikn portfolio`,
     siteUrl: `https://kiddikn.github.io/portfolio/`,
     socialLinks: [
@@ -69,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        //trackingId: `ここに記入`,
       },
     },
     `gatsby-plugin-feed`,
