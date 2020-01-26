@@ -53,7 +53,7 @@ class BlogIndex extends React.Component {
                 ライフセービング活動をしながらエンジニアをしています。
                 趣味で作成したサイトを記載します。
               </p>
-              <button><a href="/tide">Reactでapi取得練習中→</a></button>
+              <button><a href="./tide">Reactでapi取得練習中→</a></button>
             </header>
           </div>
         </section>
@@ -123,7 +123,7 @@ class BlogIndex extends React.Component {
                 <h3>資格</h3>
                 <p className="briefHistory">
                   ・中学校教諭一種免許状(数学)<br/>
-                  ・高等学校教諭一種免許状(数学)<br/>
+                  ・高等学校教諭一種免許状(数学・情報)<br/>
                   ・基本情報技術者<br/>
                   ・応用情報技術者<br/>
                   ・日本商工会議所簿記検定試験2級<br/>
