@@ -53,6 +53,7 @@ class BlogIndex extends React.Component {
                 ライフセービング活動をしながらエンジニアをしています。
                 趣味で作成したサイトを記載します。
               </p>
+              <button><a href="/tide">Reactでapi取得練習中→</a></button>
             </header>
           </div>
         </section>
