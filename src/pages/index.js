@@ -103,11 +103,13 @@ class BlogIndex extends React.Component {
               <li>
                 <h3>職歴</h3>
                 <p>DIT EM(2015.04〜2019.06)</p>
-                <p>DIT eB(2019.07〜)</p>
+                <p>DIT eB(2019.07〜2020.09)</p>
+                <p>株式会社スタジアム(2020.10〜)</p>
               </li>
               <li>
                 <h3>技術</h3>
                 <p className="briefHistory">
+                  ・Go<br/>
                   ・C#<br/>
                   ・VB.NET<br/>
                   ・Java<br/>
