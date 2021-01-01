@@ -1,30 +1,24 @@
-import React from "react";
-import DatePicker from "react-datepicker";
+import React, { useState } from 'react'
+import DatePicker from 'react-datepicker'
 
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css'
 
-class TideDatePicker extends React.Component {
-  state = {
-    startDate: new Date()
-  };
+function TideDatePicker(props) {
+  const [startDate, setStartDate] = useState(new Date())
 
-  handleChange = date => {
+  const handleChange = date => {
     // 表示を変更したのち、リフトアップした画像パスを変更
-    this.setState({
-      startDate: date
-    });
-    this.props.setTideImg(date)
-  };
-
-  render() {
-    return (
-      <DatePicker
-        dateFormat="yyyy/MM/dd"
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-      />
-    );
+    setStartDate(date)
+    props.setTideImg(date)
   }
+
+  return (
+    <DatePicker
+      dateFormat="yyyy/MM/dd"
+      selected={startDate}
+      onChange={handleChange}
+    />
+  )
 }
 
 export default TideDatePicker
